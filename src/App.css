@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notification{
+	margin: 50px 12px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  
+  [data-badge] {
+	background: #d8f5ff;
+	border: 0;
+	position: relative;
+	padding: 0.75rem;
+	border-radius: 100%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  [data-badge]:after {
+	content: attr(data-badge);
+	position: absolute;
+	background-color: #e70000;
+	color: #fff;
+	padding: 0.35rem;
+	border-radius: 2rem;
+	top: -0.35rem;
+	right: -0.35rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+*{
+	margin: 0;
+	padding: 0;
 }
+
+.App{
+  margin: 0% 10%;
+  padding: 3% 0%;
+}
+
+.dltBtn{
+  color:red;
+  font-weight: 600;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.buttons{
+	display: flex;
+	gap: 0.5rem;
+}
+
+.profile-content{
+	display: flex;
+	width: 100%;
+}
+
+.profile-content img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.photo-upload-continer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.photo-upload-btn{
+  background-color: #094c4f;
+  width: 40%;
+  padding: 12px 8px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.profile-content .profilePic{
+	width: 120px;
+}
+
+.updateBtn{
+  background: #08404b;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  outline: none;
+}
+
+.clearBtn{
+	background: #5b6012;
+	color: #fff;
+	border: none;
+	padding: 10px 30px;
+	cursor: pointer;
+	outline: none;
+}
+
+.selectBtn{
+  color:rgb(18, 135, 47);
+  font-weight: 600;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+
+
+
+
